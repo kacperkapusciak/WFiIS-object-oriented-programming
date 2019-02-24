@@ -40,14 +40,13 @@
 // Rozwiazanie (archiwum rtv.tar.gz zawierajace dodane pliki, makefile i Main.cpp)
 // nalezy wgrac do UPEL.
 
-#include"Main.h"
+#include "Main.h"
 
 int main ()
 {
   // ------------------------------------------------------------
   Komputer PC('A');
   OdtwarzaczDVD taniOdtwarzacz('M');
-
   // ------------------------------------------------------------
   const int szerokosc = 16;
   const int wysokosc = 3;
