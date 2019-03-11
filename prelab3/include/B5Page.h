@@ -1,17 +1,17 @@
-//
-// Created by kiper on 03.03.19.
-//
-
-#ifndef LAB1_B5PAGE_H
-#define LAB1_B5PAGE_H
-
+#pragma once
 #include "Page.h"
 
+/**
+ * @class B5Page
+ */
 class B5Page : public Page
 {
-  public:
-    explicit B5Page(string header = "empty", string text = "empty")
-        : Page(move(header), move(text)) {}
+public:
+  /**
+   * @fn    constructor
+   * @param header [string] default value: "empty"
+   * @param text   [string] default value: "empty"
+   */
+  explicit B5Page(string header = "empty", string text = "empty")
+      : Page(move(header), move(text)) {}
 };
-
-#endif //LAB1_B5PAGE_H

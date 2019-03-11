@@ -1,36 +1,64 @@
-//
-// Created by kiper on 10.03.19.
-//
-
-#ifndef BIBLOS2_TITLEPAGE_H
-#define BIBLOS2_TITLEPAGE_H
+#pragma once
 
 #include <string>
-
 using std::move;
 using std::string;
 
+/**
+ * @class TitlePage
+ */
 class TitlePage
 {
-  public:
-    TitlePage() = default;
+public:
+  /**
+   * @fn constructor
+   * @brief default
+  */
+  TitlePage() = default;
 
-    explicit TitlePage(string title) : _title(move(title)) {}
+  /**
+   * @fn constructor
+   * @param title [string]
+  */
+  explicit TitlePage(string title) : _title(move(title)) {}
 
-    void SetSubTitle(string sub_title) { _sub_title = move(sub_title); }
+  /**
+   * @fn SetSubTitle
+   * @brief sets sub_title value
+   * @param sub_title [string]
+   */
+  void SetSubTitle(string sub_title) { _sub_title = move(sub_title); }
 
-    void SetAuthor(string author) { _author = move(author); }
+  /**
+   * @fn SetAuthor
+   * @brief sets author value
+   * @param author [string]
+   */
+  void SetAuthor(string author) { _author = move(author); }
 
-    string GetTitle() { return _title; };
+  /**
+   * @fn GetTitle
+   * @brief title getter
+   * @return [string]
+   */
+  string GetTitle() { return _title; };
 
-    string GetSubTitle() { return _sub_title; };
+  /**
+   * @fn GetSubTitle
+   * @brief sub_title getter
+   * @return [string]
+   */
+  string GetSubTitle() { return _sub_title; };
 
-    string GetAuthor() { return _author; };
+  /**
+   * @fn GetAuthor
+   * @brief author getter
+   * @return [string]
+   */
+  string GetAuthor() { return _author; };
 
-  protected:
-    string _title;
-    string _sub_title;
-    string _author;
+protected:
+  string _title;     //!< variable that contains title
+  string _sub_title; //!< variable that contains sub_title
+  string _author;    //!< variable that contains author
 };
-
-#endif //BIBLOS2_TITLEPAGE_H

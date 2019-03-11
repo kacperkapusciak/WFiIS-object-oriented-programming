@@ -1,9 +1,4 @@
-//
-// Created by kiper on 03.03.19.
-//
-
-#ifndef LAB1_BOOK_H
-#define LAB1_BOOK_H
+#pragma once
 
 #include "Page.h"
 #include "B5Page.h"
@@ -16,23 +11,53 @@ using std::ostream;
 using std::string;
 using std::vector;
 
+/**
+ * @class Book
+*/
 class Book : public Page, public TitlePage
 {
-  public:
-    Book(string, int, string);
+public:
+  /** 
+    * @fn    constructor
+    * @param title      [string]  title of the book
+    * @param numOfPages [int]     number of pages in the book
+    * @param format     [string]  format of the page 
+    */
+  Book(string, int, string);
 
-    unsigned long size();
+  /**
+   * @fn     size
+   * @brief  returns size of the book
+   * @return [unsigned long]
+  */
+  unsigned long size();
 
-    TitlePage *TitlePagePtr() { return _titlePage; };
+  /**
+   * @fn     TitlePagePtr
+   * @brief  returns pointer to title page
+   * @return [TitlePage *]
+  */
+  TitlePage *TitlePagePtr() { return _titlePage; };
 
-    Page *operator[](int);
+  /**
+   * @fn      operator[]
+   * @brief   overloaded [] operator
+   * @param i [int]     index of the book page
+   * @return  [Page *]
+  */
+  Page *operator[](int);
 
-    friend ostream &operator<<(ostream &, Book &);
+  /**
+   * @fn operator<<
+   * @brief overloaded << operator
+   * @param out [ostream &] 
+   * @param b   [Book &]
+   * @return    [ostream &]
+  */
+  friend ostream &operator<<(ostream &, Book &);
 
-  private:
-    vector<Page *> _book;
-    int _numOfPages;
-    TitlePage *_titlePage;
+private:
+  vector<Page *> _book;  //!< vector of pointer to pages
+  int _numOfPages;       //!< containts number of pages 
+  TitlePage *_titlePage; //!< pointer to title page
 };
-
-#endif //LAB1_BOOK_H

@@ -1,10 +1,5 @@
-//
-// Created by kiper on 03.03.19.
-//
-
 #include "Book.h"
 #include <iostream>
-#include <algorithm>
 
 using std::cout;
 using std::endl;
