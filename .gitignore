@@ -36,3 +36,6 @@
 
 # Build directories
 **/build/
+
+# IDE configs
+.vscode
